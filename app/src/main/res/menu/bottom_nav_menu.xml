@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/homes"
+        android:title="Home" />
+    <item
+        android:id="@+id/menu_service"
+        android:icon="@drawable/servc"
+        android:title="Service" />
+    <item
+        android:id="@+id/menu_appointment"
+        android:icon="@drawable/appint"
+        android:title="Appointment" />
+    <item
+        android:id="@+id/menu_hospital"
+        android:icon="@drawable/hosptal"
+        android:title="Hospital" />
+    <item
+        android:id="@+id/menu_myprofile"
+        android:icon="@drawable/mypro"
+        android:title="My Profile" />
+</menu>
