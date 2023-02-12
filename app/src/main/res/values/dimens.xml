@@ -105,4 +105,34 @@
     <dimen name="dp_28">28dp</dimen>
 
 
+    <dimen name="toolbar_margin">50dp</dimen>
+    <dimen name="margin_this">30dp</dimen>
+    <dimen name="margin_top">5dp</dimen>
+    <dimen name="margin_4top">4dp</dimen>
+    <dimen name="margin_left">10dp</dimen>
+    <dimen name="text_size_medium">16dp</dimen>
+    <dimen name="margin_2dp">2dp</dimen>
+
+    <dimen name="splash_size">25dp</dimen>
+    <dimen name="lab_size">11dp</dimen>
+    <dimen name="text_size">12sp</dimen>
+    <dimen name="text_size_large">18dp</dimen>
+    <dimen name="text_size_vlarge">21dp</dimen>
+    <dimen name="contact_font">17dp</dimen>
+  <!--  <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>-->
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_vvlarge">21dp</dimen>
+    <dimen name="heading">15dp</dimen>
+    <dimen name="cardredius">8dp</dimen>
+    <dimen name="margin_6dp">6dp</dimen>
+    <dimen name="global_margin">20dp</dimen>
+    <dimen name="little_margin">2dp</dimen>
+    <dimen name="margin_bottom">90dp</dimen>
+
+    <dimen name="text_sie">16dp</dimen>
+    <dimen name="text_ordrid">14dp</dimen>
+    <dimen name="text_ord">13dp</dimen>
+
+
 </resources>

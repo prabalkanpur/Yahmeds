@@ -1,22 +1,51 @@
 package com.yahmeds.healthcare
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.content.ContentProviderCompat.requireContext
+import android.view.MenuItem
+import android.view.View
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.res.ResourcesCompat
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import androidx.viewpager.widget.ViewPager
-import com.yahmeds.healthcare.adapters.ImageSliderAdapter
-import com.yahmeds.healthcare.adapters.offerAdapter
+import com.google.android.material.navigation.NavigationView
 import com.yahmeds.healthcare.fragments.DashBoardFragment
-import me.relex.circleindicator.CircleIndicator
 
-class DashBoardActivity : AppCompatActivity() {
+class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    private lateinit var drawer: DrawerLayout
+    var mToolbar: Toolbar? = null
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dash_board)
+        drawer = findViewById(R.id.drawer)
+        val toggle = ActionBarDrawerToggle(
+            this,
+            drawer,
+            mToolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
+        )
+        drawer.setDrawerListener(toggle)
+        toggle.syncState()
 
+        val drawable =
+            ResourcesCompat.getDrawable(resources, R.drawable.ic_hamburger_menu, this.theme)
+        toggle.isDrawerIndicatorEnabled = false
+        toggle.setHomeAsUpIndicator(drawable)
+        toggle.toolbarNavigationClickListener = View.OnClickListener {
+            if (drawer.isDrawerVisible(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START)
+            } else {
+                drawer.openDrawer(GravityCompat.START)
+            }
+        }
+        val navigationView = findViewById<View>(R.id.nav_view) as NavigationView
+        navigationView.setNavigationItemSelectedListener(this)
         val firstFragment = DashBoardFragment()
         setCurrentFragment(firstFragment)
     }
@@ -26,4 +55,14 @@ class DashBoardActivity : AppCompatActivity() {
             replace(R.id.flFragment, fragment)
             commit()
         }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        TODO("Not yet implemented")
+    }
+
+   /* fun setMain() {
+        setFragment(DashboardFragment.newInstance(), "DashBoard")
+        // NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        //navigationView.getMenu().getItem(0).setChecked(true);
+    }*/
 }

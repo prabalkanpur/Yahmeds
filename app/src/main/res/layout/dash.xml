@@ -96,43 +96,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_90"
                         android:scaleType="fitXY"
-                        android:src="@drawable/doctor" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="Doctors"
-                        android:padding="@dimen/dp_5"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/dp_17" />
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight=".02" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight=".32"
-                app:cardCornerRadius="@dimen/dp_5"
-                app:cardElevation="@dimen/dp_2"
-                app:cardBackgroundColor="@color/white"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_90"
-                        android:scaleType="fitXY"
                         android:background="@color/app_color"
                         android:src="@drawable/hospital" />
 
@@ -146,6 +109,43 @@
                         android:textSize="@dimen/dp_17" />
                 </LinearLayout>
 
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".02" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".32"
+                app:cardCornerRadius="@dimen/dp_5"
+                app:cardElevation="@dimen/dp_2"
+                app:cardBackgroundColor="@color/white"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_90"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/lab_test" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Lab Test"
+                        android:padding="@dimen/dp_5"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp_17" />
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -164,7 +164,6 @@
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true">
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -174,18 +173,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_90"
                         android:scaleType="fitXY"
-                        android:src="@drawable/emergency" />
+                        android:src="@drawable/doctor" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Emergency"
+                        android:text="Doctors"
                         android:padding="@dimen/dp_5"
                         android:textColor="@color/black"
                         android:textSize="@dimen/dp_17" />
                 </LinearLayout>
-
 
             </androidx.cardview.widget.CardView>
 
@@ -248,6 +246,7 @@
                 app:cardBackgroundColor="@color/white"
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -257,19 +256,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_90"
                         android:scaleType="fitXY"
-                        android:src="@drawable/lab_test" />
+                        android:src="@drawable/emergency" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Diagnostic Lab"
+                        android:text="Emergency"
                         android:padding="@dimen/dp_5"
-                        android:maxLines="2"
                         android:textColor="@color/black"
                         android:textSize="@dimen/dp_17" />
                 </LinearLayout>
-
 
             </androidx.cardview.widget.CardView>
 

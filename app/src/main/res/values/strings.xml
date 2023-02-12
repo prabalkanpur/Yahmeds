@@ -10,4 +10,6 @@
     <string name="your_email_address">Enter Your Email Address</string>
     <string name="next">Next</string>
     <string name="don_t_have_an_account_sign_up">Don\'t have an account?</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
