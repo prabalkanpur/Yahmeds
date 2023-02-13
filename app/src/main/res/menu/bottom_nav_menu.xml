@@ -14,7 +14,7 @@
         android:title="Appointment" />
     <item
         android:id="@+id/menu_hospital"
-        android:icon="@drawable/hosptal"
+        android:icon="@drawable/homes"
         android:title="Hospital" />
     <item
         android:id="@+id/menu_myprofile"

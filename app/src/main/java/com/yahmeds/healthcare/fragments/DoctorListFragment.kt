@@ -10,12 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.yahmeds.healthcare.R
+import com.yahmeds.healthcare.adapters.DoctorListAdapter
 import com.yahmeds.healthcare.adapters.HospitalListAdapter
 import com.yahmeds.healthcare.adapters.ImageSliderAdapter
 import com.yahmeds.healthcare.dataclass.HospitalListModel
 import me.relex.circleindicator.CircleIndicator
 
-class HospitalFragment :Fragment() {
+class DoctorListFragment:Fragment() {
     lateinit var viewPagerAdapter: ImageSliderAdapter
     private lateinit var card_hospital: CardView
     lateinit var indicator: CircleIndicator
@@ -33,7 +34,7 @@ class HospitalFragment :Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(com.yahmeds.healthcare.R.layout.hospital_list_fragment, container, false)
+        return inflater.inflate(com.yahmeds.healthcare.R.layout.doctor_fragment_layout, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -59,14 +60,14 @@ class HospitalFragment :Fragment() {
         // This loop will create 20 Views containing
         // the image with the count of view
         for (i in 1..20) {
-            data.add(HospitalListModel(R.drawable.hospitals))
+            data.add(HospitalListModel(R.drawable.doctors))
         }
 
         // This will pass the ArrayList to our Adapter
-        val adapter = HospitalListAdapter(data)
+        val adapter = DoctorListAdapter(data)
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
 
     }
-    }
+}

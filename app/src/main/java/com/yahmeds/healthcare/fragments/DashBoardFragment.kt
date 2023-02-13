@@ -16,6 +16,7 @@ import me.relex.circleindicator.CircleIndicator
 class DashBoardFragment : Fragment() {
     lateinit var viewPagerAdapter: ImageSliderAdapter
     private lateinit var card_hospital:CardView
+    private lateinit var card_doctor:CardView
     lateinit var indicator: CircleIndicator
     lateinit var viewpager: ViewPager
     private val images = arrayOf<Int>(
@@ -49,6 +50,7 @@ class DashBoardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         card_hospital = view.findViewById(R.id.card_hospital)
+        card_doctor = view.findViewById(R.id.card_doctor)
         viewpager = view.findViewById(R.id.viewpager)
         viewPagerAdapter = ImageSliderAdapter(requireContext(), images)
         viewpager.adapter = viewPagerAdapter
@@ -59,6 +61,14 @@ class DashBoardFragment : Fragment() {
         viewpager2.adapter = offerAdapter
         indicator2 = view.findViewById(R.id.indicator2) as CircleIndicator
         indicator2.setViewPager(viewpager2)
+        card_doctor.setOnClickListener(View.OnClickListener {
+
+            val transaction = activity?.supportFragmentManager?.beginTransaction()
+            transaction?.replace(R.id.flFragment, DoctorListFragment())
+            transaction?.addToBackStack(null)
+            transaction?.commit()
+        })
+
         card_hospital.setOnClickListener(View.OnClickListener {
 
             val transaction = activity?.supportFragmentManager?.beginTransaction()

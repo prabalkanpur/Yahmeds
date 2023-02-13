@@ -18,10 +18,12 @@ class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
     private lateinit var drawer: DrawerLayout
     var mToolbar: Toolbar? = null
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint("MissingInflatedId", "RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dash_board)
+        mToolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(mToolbar)
         drawer = findViewById(R.id.drawer)
         val toggle = ActionBarDrawerToggle(
             this,
@@ -30,9 +32,11 @@ class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             R.string.navigation_drawer_open,
             R.string.navigation_drawer_close
         )
-        drawer.setDrawerListener(toggle)
-        toggle.syncState()
+        drawer.addDrawerListener(toggle)
+        toggle.syncState();
 
+        // to make the Navigation drawer icon always appear on the action bar
+        toggle.syncState()
         val drawable =
             ResourcesCompat.getDrawable(resources, R.drawable.ic_hamburger_menu, this.theme)
         toggle.isDrawerIndicatorEnabled = false

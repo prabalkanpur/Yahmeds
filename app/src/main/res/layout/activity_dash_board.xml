@@ -41,8 +41,7 @@
         android:layout_gravity="start"
         android:background="@color/white"
         android:fitsSystemWindows="true"
-        app:itemIconTint="@color/app_color"
-        tools:ignore="MissingConstraints">
+        app:itemIconTint="@color/app_color">
 
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -183,7 +182,7 @@
                         android:layout_weight=".9"
                         android:fontFamily="sans-serif"
                         android:singleLine="true"
-                        android:text="My Acoount"
+                        android:text="Appointments"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size_medium"
                         android:textStyle="bold" />
@@ -218,7 +217,7 @@
                         android:layout_marginLeft="@dimen/heading"
                         android:layout_weight=".7"
                         android:fontFamily="sans-serif"
-                        android:text="My Service"
+                        android:text="Orders"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size_medium"
                         android:textStyle="bold" />
@@ -229,7 +228,106 @@
                     android:layout_height="0.1dp"
                     android:background="@color/white" />
                 <LinearLayout
-                    android:id="@+id/menu_lin_tdelay"
+                    android:id="@+id/menu_lin_pharma"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_small"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/circle_help"
+                        android:padding="8dp"
+                        app:srcCompat="@drawable/help" />
+
+                    <TextView
+                        android:id="@+id/menu_hospital"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/heading"
+                        android:layout_weight=".7"
+                        android:fontFamily="sans-serif"
+                        android:text="Doctors"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/white" />
+                <LinearLayout
+                    android:id="@+id/menu_lin_emergency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_small"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/circle_help"
+                        android:padding="8dp"
+                        app:srcCompat="@drawable/help" />
+
+                    <TextView
+                        android:id="@+id/menu_txt_diagnosticlab"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/heading"
+                        android:layout_weight=".7"
+                        android:fontFamily="sans-serif"
+                        android:text="Hospitals"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/white" />
+                <LinearLayout
+                    android:id="@+id/menu_lin_dctors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_small"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/circle_help"
+                        android:padding="8dp"
+                        app:srcCompat="@drawable/help" />
+
+                    <TextView
+                        android:id="@+id/menu_txt_lay"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/heading"
+                        android:layout_weight=".7"
+                        android:fontFamily="sans-serif"
+                        android:text="Pharma"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/white" />
+                <LinearLayout
+                    android:id="@+id/menu_lin_doctors"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_small"
@@ -252,7 +350,40 @@
                         android:layout_marginLeft="@dimen/heading"
                         android:layout_weight=".7"
                         android:fontFamily="sans-serif"
-                        android:text="My Order"
+                        android:text="Emergency"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/white" />
+                <LinearLayout
+                    android:id="@+id/menu_lin_docto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_small"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/circle_help"
+                        android:padding="8dp"
+                        app:srcCompat="@drawable/help" />
+
+                    <TextView
+                        android:id="@+id/menu_txt_dela"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/heading"
+                        android:layout_weight=".7"
+                        android:fontFamily="sans-serif"
+                        android:text="Diagnostic Lab"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size_medium"
                         android:textStyle="bold" />
