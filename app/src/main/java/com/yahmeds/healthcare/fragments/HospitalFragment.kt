@@ -63,7 +63,7 @@ class HospitalFragment :Fragment() {
         }
 
         // This will pass the ArrayList to our Adapter
-        val adapter = HospitalListAdapter(data)
+        val adapter = HospitalListAdapter(context,data)
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter

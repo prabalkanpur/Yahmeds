@@ -5,7 +5,8 @@
     android:background="@drawable/shap_edittext"
     android:orientation="vertical"
     android:layout_marginTop="@dimen/dp_10"
-    android:layout_marginHorizontal="@dimen/dp_10">
+    android:layout_marginHorizontal="@dimen/dp_10"
+    android:id="@+id/linear_hospital_list">
 
     <LinearLayout
         android:layout_width="match_parent"

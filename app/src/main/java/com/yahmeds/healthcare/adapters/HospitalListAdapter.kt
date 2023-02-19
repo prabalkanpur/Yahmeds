@@ -1,17 +1,22 @@
 package com.yahmeds.healthcare.adapters
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.yahmeds.healthcare.HospitalDetailActivity
 import com.yahmeds.healthcare.R
 import com.yahmeds.healthcare.dataclass.HospitalListModel
 import de.hdodenhof.circleimageview.CircleImageView
 
-class HospitalListAdapter(private val mList: List<HospitalListModel>) : RecyclerView.Adapter<HospitalListAdapter.ViewHolder>() {
+class HospitalListAdapter(context: Context?, private val mList: List<HospitalListModel>) :
+    RecyclerView.Adapter<HospitalListAdapter.ViewHolder>() {
 
+    val context = context
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,10 +37,15 @@ class HospitalListAdapter(private val mList: List<HospitalListModel>) : Recycler
         holder.imageView.setImageResource(ItemsViewModel.image)
 
         // sets the text to the textview from our itemHolder class
-       /* holder.hospitalName.text = ItemsViewModel.text
-        holder.hospitalAddress.text = ItemsViewModel.text
-        holder.hospitalType.text = ItemsViewModel.text
-*/
+        /* holder.hospitalName.text = ItemsViewModel.text
+         holder.hospitalAddress.text = ItemsViewModel.text
+         holder.hospitalType.text = ItemsViewModel.text
+ */
+       holder.linearHospitalList.setOnClickListener(View.OnClickListener {
+            val intent = Intent(context, HospitalDetailActivity::class.java)
+            context?.startActivity(intent)
+        })
+
     }
 
     // return the number of the items in the list
@@ -45,6 +55,7 @@ class HospitalListAdapter(private val mList: List<HospitalListModel>) : Recycler
 
     // Holds the views for adding it to image and text
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
+        val linearHospitalList: LinearLayout = itemView.findViewById(R.id.linear_hospital_list)
         val imageView: CircleImageView = itemView.findViewById(R.id.hospital_image)
         val hospitalName: TextView = itemView.findViewById(R.id.hospital_name)
         val hospitalType: TextView = itemView.findViewById(R.id.hospital_type)

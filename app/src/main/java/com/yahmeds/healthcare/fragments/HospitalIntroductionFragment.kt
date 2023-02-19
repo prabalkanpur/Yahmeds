@@ -6,15 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-class HospitalListFragment :Fragment() {
-
-   /* fun newInstance(): {
-        val args = Bundle()
-
-        val fragment = ()
-        fragment.arguments = args
-        return fragment
-    }*/
+class HospitalIntroductionFragment:Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,

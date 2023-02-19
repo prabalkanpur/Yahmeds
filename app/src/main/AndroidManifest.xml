@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Yahmeds">
         <activity
+            android:name=".HospitalDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".DashBoardActivity"
             android:exported="false"
             android:screenOrientation="portrait">
