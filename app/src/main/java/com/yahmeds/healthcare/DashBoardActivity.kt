@@ -1,10 +1,12 @@
 package com.yahmeds.healthcare
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.os.Bundle
-import android.view.MenuItem
-import android.view.View
+import android.view.*
+import android.widget.ImageView
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.res.ResourcesCompat
@@ -14,10 +16,13 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 import com.yahmeds.healthcare.fragments.DashBoardFragment
 
-class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
+    View.OnClickListener {
 
     private lateinit var drawer: DrawerLayout
     var mToolbar: Toolbar? = null
+    lateinit var imgThreeDot: ImageView
+
     @SuppressLint("MissingInflatedId", "RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +43,7 @@ class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         // to make the Navigation drawer icon always appear on the action bar
         toggle.syncState()
         val drawable =
-            ResourcesCompat.getDrawable(resources, R.drawable.ic_hamburger_menu, this.theme)
+            ResourcesCompat.getDrawable(resources, R.drawable.menu, this.theme)
         toggle.isDrawerIndicatorEnabled = false
         toggle.setHomeAsUpIndicator(drawable)
         toggle.toolbarNavigationClickListener = View.OnClickListener {
@@ -48,6 +53,8 @@ class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
                 drawer.openDrawer(GravityCompat.START)
             }
         }
+        imgThreeDot = findViewById(R.id.img_three_dot);
+        imgThreeDot.setOnClickListener(this)
         val navigationView = findViewById<View>(R.id.nav_view) as NavigationView
         navigationView.setNavigationItemSelectedListener(this)
         val firstFragment = DashBoardFragment()
@@ -64,9 +71,37 @@ class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         TODO("Not yet implemented")
     }
 
-   /* fun setMain() {
-        setFragment(DashboardFragment.newInstance(), "DashBoard")
-        // NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        //navigationView.getMenu().getItem(0).setChecked(true);
-    }*/
+    override fun onClick(p0: View?) {
+        if (p0 != null) {
+            when (p0.id) {
+                R.id.img_three_dot->
+                    showMoreDialog(this);
+            }
+        }
+    }
+
+    // When User cilcks on dialog button, call this method
+    fun showMoreDialog(view: DashBoardActivity) {
+        /*val dialog = Dialog(this)
+        dialog.setContentView(R.layout.dashboard_more_option_dialog)*/
+        val viewGroup = findViewById<ViewGroup>(android.R.id.content)
+        val dialogView: View =
+            LayoutInflater.from(this).inflate(R.layout.dashboard_more_option_dialog, viewGroup, false)
+        val builder = AlertDialog.Builder(this)
+        builder.setView(dialogView)
+        val alertDialog = builder.create()
+        alertDialog.window!!.setGravity(Gravity.TOP)
+        alertDialog.show()
+        /*val dialogButton = dialog.findViewById<Button>(R.id.dialogButtonOK)
+        dialogButton.setOnClickListener {
+            dialog.dismiss()
+            Toast.makeText(applicationContext, "Dismissed..!!", Toast.LENGTH_SHORT).show()
+        }*/
+        //dialog.show()
+    }
+    /* fun setMain() {
+         setFragment(DashboardFragment.newInstance(), "DashBoard")
+         // NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+         //navigationView.getMenu().getItem(0).setChecked(true);
+     }*/
 }
