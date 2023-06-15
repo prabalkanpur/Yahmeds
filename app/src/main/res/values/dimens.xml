@@ -15,6 +15,7 @@
     <bool name="default_circle_indicator_centered">true</bool>
     <bool name="default_circle_indicator_snap">false</bool>
     <dimen name="default_circle_indicator_stroke_width">0dp</dimen>
+    <dimen name="single_calendar_margin">10dp</dimen>
 
     <!--Screen margins/padding, per the Android Design Guidelines-->
     <dimen name="dp_1">1dp</dimen>

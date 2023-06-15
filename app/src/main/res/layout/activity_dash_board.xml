@@ -98,7 +98,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/user_mobile"
+                            android:id="@+id/text_view_profile"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -134,13 +134,43 @@
                     android:layout_weight=".9"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/menu_change_passs"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Emergency"
-                        android:textSize="@dimen/dp_17"
-                        android:gravity="center"
-                        android:textColor="@color/black"/>
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/dp_8"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_35"
+                            android:layout_height="@dimen/dp_35"
+                            android:background="@drawable/circle_help"
+                            android:padding="5dp"
+                            app:srcCompat="@drawable/doctor_icon" />
+
+                        <TextView
+                            android:id="@+id/menu_change_passwordd"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/heading"
+                            android:layout_weight=".9"
+                            android:fontFamily="sans-serif"
+                            android:singleLine="true"
+                            android:text="Emergency"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight=".05"
+                            android:src="@drawable/forward_icon" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/menu_change_pass"
@@ -225,22 +255,49 @@
                         android:layout_width="match_parent"
                         android:layout_height="0.1dp"
                         android:background="@color/white" />
-
-                    <TextView
-                        android:id="@+id/menu_book_ambulance"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:id="@+id/menu_change_paass"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="sans-serif"
-                        android:text="Book Ambulance"
-                        android:layout_marginLeft="@dimen/dp_20"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_medium"
-                        android:textStyle="normal" />
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/dp_8"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_35"
+                            android:layout_height="@dimen/dp_35"
+                            android:background="@drawable/circle_help"
+                            android:padding="5dp"
+                            app:srcCompat="@drawable/doctor_icon" />
+
+                        <TextView
+                            android:id="@+id/menu_change_paassword"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/heading"
+                            android:layout_weight=".9"
+                            android:fontFamily="sans-serif"
+                            android:singleLine="true"
+                            android:text="Book Ambulance"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight=".05"
+                            android:src="@drawable/forward_icon" />
+                    </LinearLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.1dp"
                         android:background="@color/white" />
+
 
                     <LinearLayout
                         android:id="@+id/menu_lin_pharma"
@@ -365,17 +422,43 @@
                         android:layout_width="match_parent"
                         android:layout_height="0.1dp"
                         android:background="@color/white" />
-                    <TextView
-                        android:id="@+id/menu_save_hospital"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:id="@+id/menuu_change_paass"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="sans-serif"
-                        android:text="Saved Hospitals"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_medium"
-                        android:layout_marginLeft="@dimen/dp_20"
-                        android:textStyle="normal" />
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/dp_8"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_35"
+                            android:layout_height="@dimen/dp_35"
+                            android:background="@drawable/circle_help"
+                            android:padding="5dp"
+                            app:srcCompat="@drawable/doctor_icon" />
+
+                        <TextView
+                            android:id="@+id/meenu_change_paassword"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/heading"
+                            android:layout_weight=".9"
+                            android:fontFamily="sans-serif"
+                            android:singleLine="true"
+                            android:text="Saved Hopitals"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight=".05"
+                            android:src="@drawable/forward_icon" />
+                    </LinearLayout>
 
                     <View
                         android:layout_width="match_parent"

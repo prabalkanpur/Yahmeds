@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.yahmeds.healthcare.R
 import com.yahmeds.healthcare.adapters.DoctorListAdapter
-import com.yahmeds.healthcare.adapters.HospitalListAdapter
 import com.yahmeds.healthcare.adapters.ImageSliderAdapter
 import com.yahmeds.healthcare.dataclass.HospitalListModel
 import me.relex.circleindicator.CircleIndicator
@@ -64,7 +63,7 @@ class DoctorListFragment:Fragment() {
         }
 
         // This will pass the ArrayList to our Adapter
-        val adapter = DoctorListAdapter(data)
+        val adapter = DoctorListAdapter(activity,data)
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter

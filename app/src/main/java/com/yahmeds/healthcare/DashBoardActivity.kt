@@ -1,10 +1,11 @@
 package com.yahmeds.healthcare
 
 import android.annotation.SuppressLint
-import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +15,9 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
+import com.yahmeds.healthcare.activities.UserProfileActivity
 import com.yahmeds.healthcare.fragments.DashBoardFragment
+import com.yahmeds.healthcare.fragments.UserProfileFragment
 
 class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
     View.OnClickListener {
@@ -22,6 +25,7 @@ class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     private lateinit var drawer: DrawerLayout
     var mToolbar: Toolbar? = null
     lateinit var imgThreeDot: ImageView
+    private lateinit var editProfile: TextView
 
     @SuppressLint("MissingInflatedId", "RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +63,8 @@ class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         navigationView.setNavigationItemSelectedListener(this)
         val firstFragment = DashBoardFragment()
         setCurrentFragment(firstFragment)
+        init()
+        setListener()
     }
 
     private fun setCurrentFragment(fragment: Fragment) =
@@ -74,8 +80,19 @@ class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     override fun onClick(p0: View?) {
         if (p0 != null) {
             when (p0.id) {
-                R.id.img_three_dot->
+                R.id.img_three_dot ->
                     showMoreDialog(this);
+                R.id.text_view_profile -> {
+                    val fragmentMnager = supportFragmentManager
+                    fragmentMnager.popBackStack()
+                    if (drawer.isDrawerOpen(GravityCompat.START)) {
+                        drawer.closeDrawer(GravityCompat.START)
+                    }
+                  //  gotoUserProfileFragment(UserProfileFragment())
+                    val intent = Intent(this, UserProfileActivity::class.java)
+                    // start your next activity
+                    startActivity(intent)
+                }
             }
         }
     }
@@ -86,7 +103,8 @@ class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         dialog.setContentView(R.layout.dashboard_more_option_dialog)*/
         val viewGroup = findViewById<ViewGroup>(android.R.id.content)
         val dialogView: View =
-            LayoutInflater.from(this).inflate(R.layout.dashboard_more_option_dialog, viewGroup, false)
+            LayoutInflater.from(this)
+                .inflate(R.layout.dashboard_more_option_dialog, viewGroup, false)
         val builder = AlertDialog.Builder(this)
         builder.setView(dialogView)
         val alertDialog = builder.create()
@@ -104,4 +122,20 @@ class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
          // NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
          //navigationView.getMenu().getItem(0).setChecked(true);
      }*/
+
+    private fun init() {
+        editProfile = findViewById(R.id.text_view_profile)
+
+    }
+
+    private fun gotoUserProfileFragment(userProfileFragment: UserProfileFragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.flFragment, userProfileFragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+
+    private fun setListener() {
+        editProfile.setOnClickListener(this)
+    }
 }

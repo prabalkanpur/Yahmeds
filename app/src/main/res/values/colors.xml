@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#bb273b</color>
     <color name="emergency_background">#ffd1d7</color>
     <color name="doctor_backgroung">#3ecdeb</color>
     <color name="ambulance_background">#fe223c</color>

@@ -1,116 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp_100"
-    android:layout_marginHorizontal="@dimen/dp_10"
-    android:layout_marginTop="@dimen/dp_10"
-    android:background="@drawable/shap_edittext"
-    android:orientation="vertical">
+    android:elevation="@dimen/dp_5"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/dp_5"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
+        android:id="@+id/linear_doctor_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="1">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/hospital_image"
-            android:layout_width="@dimen/dp_80"
-            android:layout_height="@dimen/dp_70"
-            android:padding="@dimen/dp_10"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/hospitals" />
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/dp_5"
-            android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:padding="@dimen/dp_5">
+            android:orientation="horizontal"
+            android:weightSum="1">
 
-            <TextView
-                android:id="@+id/hospital_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dr. Tarun Vijay"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="@dimen/dp_17" />
-
-            <TextView
-                android:id="@+id/hospital_desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="MBBS, MD and Child Specialist"
-                android:textColor="@color/black"
-                android:textSize="@dimen/dp_17" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/hospital_image"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="@dimen/dp_70"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/dp_10"
+                android:src="@drawable/hospitals" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_35"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_marginBottom="@dimen/dp_5">
-
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".6"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
-
-                    <ImageView
-                        android:layout_width="@dimen/dp_17"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star" />
-
-                    <ImageView
-                        android:layout_width="@dimen/dp_17"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star" />
-
-                    <ImageView
-                        android:layout_width="@dimen/dp_17"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star" />
-
-                    <ImageView
-                        android:layout_width="@dimen/dp_17"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star" />
-
-                    <ImageView
-                        android:layout_width="@dimen/dp_17"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star" />
-
-                    <TextView
-                        android:id="@+id/hospital_type"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/dp_2"
-                        android:gravity="center"
-                        android:text="(213) Noida"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/dp_12" />
-                </LinearLayout>
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_5">
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/dp_30"
-                    android:layout_weight=".4"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center"
-                    android:textSize="13dp"
-                    android:text="Book Appointment"
-                    android:background="@color/doctor_backgroung"
-                    android:textColor="@color/button_back" />
+                    android:id="@+id/hospital_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dr. Tarun Vijay"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_16"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed-medium"/>
 
+                <TextView
+                    android:id="@+id/hospital_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MBBS, MD and Child Specialist"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_14"
+                    android:fontFamily="sans-serif-condensed-medium"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_35"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".58"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_17"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/star" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_17"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/star" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_17"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/star" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_17"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/star" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_17"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/star" />
+
+                        <TextView
+                            android:id="@+id/hospital_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dp_2"
+                            android:gravity="center"
+                            android:text="(213) Noida"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dp_12" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight=".42"
+                        android:background="@drawable/shap_button"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="Book Appointment"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
